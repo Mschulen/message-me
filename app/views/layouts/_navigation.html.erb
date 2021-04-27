@@ -1,29 +1,19 @@
 <div class="ui container">
-    <div class="ui inverted segment mini">
-        <div class="ui inverted secondary pointing menu">
+    <div class="ui">
+        <div class="ui menu">
+            <div class="header item">
+                <%= link_to 'Chatroom', root_path %>
+            </div>
 
-            <div class="container">
-                <a class="active item">
-                    Chatroom
-                </a>
-                <a class="item">
-                    Messages
-                </a>
-                <a class="item">
-                    Friends
-                </a>
-                <div class="ui dropdown item">
-                    Dropdown <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <div class="item">Sign in</div>
-                        <div class="item">Sign out</div>
-                        <div class="item">Sign up</div>
-                        <div class="item">Account info</div>
-                    </div>
-                </div>
-                <a class="item">
-                    <%= link_to 'Login', login_path %>
-                </a>
+            <div class="item">
+                <%= link_to 'Login', login_path %>
+            </div>
+
+            <div class="item">
+                <%= link_to 'Log out' %>
+            </div>
+            <div class="item">
+                <%= link_to 'Sign up' %>
             </div>
         </div>
     </div>
