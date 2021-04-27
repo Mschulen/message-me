@@ -19,31 +19,29 @@
                 <div class="ui feed">
                     <div class="event">
                         <div class="content">
+                            <% @messages.each do |message| %>
                             <div class="date">
-                                3 years ago
+                                <div id="mini-text">
+                                    <%= time_ago_in_words(message.created_at) %> ago
+                                </div>
                             </div>
-                            <div class="summary">
-                                <em>Janette:</em> how is everyone? :)
+                            <div class="">
+                                <strong><%= @users.find_by(id: message.user_id).username %>:</strong> <%= message.body %>
                             </div>
+                            <% end %>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="extra content">
-                <form class="ui reply form">
-                    <div class="field">
-                        <textarea></textarea>
-                    </div>
-                    <div class="ui fluid icon right aligned">
-                        <i class="black edit icon"></i></div>
-                </form>
-            </div>
+            <%= form_for(@message, html: {class: "ui reply form", role: "form"},
+                    url: message_path) do |f| %>
+            <%= f.text_field :body %>
+            <%= f.button %>
+            <% end %>
         </div>
     </div>
 
     <div class="six wide column chatbox">
-
         <div class="ui vertical menu">
             <a class="item">
                 <h4 class="ui header">Settings</h4>
@@ -58,6 +56,5 @@
                 <p>I thought it was rAbates not rEbates... weird</p>
             </a>
         </div>
-
     </div>
 </div>

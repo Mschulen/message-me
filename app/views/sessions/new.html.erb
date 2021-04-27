@@ -1,39 +1,48 @@
-<div class="ui ten column wide grid center aligned">
-    <div class="ui middle aligned center aligned grid">
-        <div class="column">
-            <h2 class="ui teal image header">
-                <div class="content penis beniz">
-                    Log-in to your account
-                </div>
-            </h2>
+<div class="penis">
+    <div class="ui card centered">
+        <div class="content">
+            <div class="ui ten column wide grid center aligned">
+                <div class="ui middle aligned center aligned grid">
+                    <div class="column">
+                        <h2 class="ui teal image header">
+                            <div class="content penis beniz">
+                                Login to your account
+                            </div>
+                        </h2>
 
-<!-- form starts -->
 
-            <form class="ui large form">
-                <div class="ui stacked segment">
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="user icon"></i>
-                            <input type="text" name="email" placeholder="E-mail address">
+                        <!-- form starts -->
+
+                        <%= form_for(:session, html: {class: "ui form", role: "form"}, url: login_path, local: true) do |f| %>
+
+                        <div class="field">
+                            <%= f.label :username, "Username" %>
+                            <div class="ui left icon input">
+                                <%= f.text_field :username, class: "", placeholder: "Enter username" %>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <%= f.label :password, "Password" %>
+                            <div class="ui left icon input">
+                                <%= f.text_field :password, placeholder: "Enter password" %>
+                            </div>
+                        </div>
+
+
+                        <%= f.button "Login", class: "ui range submit button" %>
+
+                        <% end %>
+
+                        <!-- form ends -->
+
+
+
+                        <div class="ui message">
+                            New to us? Sign Up
                         </div>
                     </div>
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="lock icon"></i>
-                            <input type="password" name="password" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="ui fluid large teal submit button">Login</div>
                 </div>
-
-<!-- form ends -->
-
-                <div class="ui error message">penis error xd</div>
-
-            </form>
-
-            <div class="ui message">
-                New to us?  Sign Up
             </div>
         </div>
     </div>

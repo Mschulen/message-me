@@ -1,0 +1,13 @@
+<% flash.each do |type, message|%>
+<div class="ui <%= type %> message transition">
+    <i class="close icon"></i>
+    <div class="header">
+        <%= type.capitalize %>
+    </div>
+
+    <ul class="list">
+        <li><%= message %></li>
+
+        <% end %>
+    </ul>
+</div>
